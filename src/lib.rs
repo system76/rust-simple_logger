@@ -16,7 +16,7 @@ impl Log for SimpleLogger {
 
     fn log(&self, record: &Record) {
         if self.enabled(record.metadata()) {
-            println!(
+            eprintln!(
                 "{} {:<5} [{}] {}",
                 time::strftime("%Y-%m-%d %H:%M:%S", &time::now()).unwrap(),
                 record.level().to_string(),
